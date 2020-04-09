@@ -1,0 +1,36 @@
+// -------------------- step-2 ----------------------
+
+.step-2 {
+  .container {
+    .box {
+      .content {
+        .text {
+          font-size: 1.3rem !important;
+          max-width: 500px;
+          text-align: center;
+
+          p {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+  .shapes {
+    display: flex;
+    flex-direction: column;
+    top: 0 !important;
+    left: -3% !important;
+    // justify-content: space-around;
+    // left: 0 !important;
+
+    img:first-child {
+      transform: scale(0.8);
+    }
+    img:last-child {
+      margin-top: -150px;
+      width: 250px;
+      height: 260px;
+    }
+  }
+}

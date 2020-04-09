@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdfdfd;
+}
+
+// ----------------- root ----------------
+:root {
+  .title {
+    font-family: $secondary-font;
+    font-size: 2.8rem;
+    color: $text-color;
+    text-transform: capitalize;
+    width: 80%;
+    margin: 0 auto;
+
+    h1 {
+      position: relative;
+      text-align: center;
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + 20px);
+        left: 70%;
+        transform: translateX(-70%);
+        width: 50%;
+        height: 3px;
+        background: $text-color;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  #step {
+    margin-top: $margin-main-title;
+    // margin-bottom: $margin-main-title;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .container {
+      .title {
+        margin-bottom: $margin-main-title;
+      }
+      .box {
+        width: 85%;
+        margin-left: 15%;
+        display: flex;
+        justify-content: space-between;
+        height: 500px;
+        // position: relative;
+        .navigator {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-between;
+          font-family: $secondary-font;
+          align-items: center;
+          height: 550px;
+
+          & > :not(:first-child) {
+            margin-top: 15px;
+          }
+
+          .line {
+            display: block;
+            // height: 16;
+            width: 2px;
+            flex-grow: 1;
+            background: #5a5a5a;
+            border-radius: 9px;
+            opacity: 0.8;
+          }
+
+          .slide-number {
+            font-size: 1.2rem;
+            color: $text-color;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: $navigators-box-shadow;
+          }
+        }
+
+        .icon {
+          width: 80px;
+          height: 60px;
+          background: #fff;
+          border-radius: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: $navigators-box-shadow;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .arrows {
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        font-family: $primary-font;
+        margin-left: -100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .image {
+          margin-bottom: 20px;
+          img {
+            object-fit: cover;
+            width: 470px;
+            height: 400px;
+          }
+        }
+
+        .text {
+          // width: 100%;
+          // text-align: center;
+          max-width: 500px;
+          text-align: center;
+          color: $text-color;
+          font-size: 1.8rem;
+          // position: relative;
+          span {
+            font-weight: 700;
+          }
+
+          p {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              top: -20px;
+              left: 70px;
+              width: 300px;
+              height: 3px;
+              background: $text-color;
+              border-radius: 10px;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      .slides {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 100px 0;
+        font-family: $secondary-font;
+
+        & > :not(:first-child) {
+          margin-top: 10px;
+        }
+
+        .line {
+          width: 2px;
+          flex-grow: 1;
+          background: #5a5a5a;
+          border-radius: 9px;
+        }
+
+        span {
+          width: 35px;
+          height: 35px;
+          background: $primary-color;
+          border-radius: 50px;
+          color: #fff;
+          font-size: 1rem;
+          // font-weight: 700;
+          opacity: 0.7;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          transition: opacity 400ms;
+          margin-right: 10px;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        // span:not(:last-child)::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: calc(100% + 10px);
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   width: 1px;
+        //   height: 65px;
+        //   background: $text-color;
+        //   opacity: 1;
+        //   border-radius: 10px;
+        //   cursor: auto;
+        // }
+
+        .active {
+          box-shadow: $navigators-box-shadow;
+          opacity: 1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -40px;
+          right: -30px;
+          background-image: url(../images/slider-bg.svg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          // width: 100%;
+          width: 190px;
+          height: 600px;
+          z-index: -1;
+
+          // height: 100%;
+        }
+      }
+    }
+  }
+  .shapes {
+    position: absolute;
+    top: 30%;
+    left: -5%;
+    z-index: -1;
+    // transform: scale(0.8);
+  }
+}
+.step-btn {
+  font-family: $button-font;
+  width: 180px;
+  height: 40px;
+  background: $primary-color;
+  border-radius: 50px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: background 700ms;
+
+  &:hover {
+    background: $secondary-color;
+  }
+}
