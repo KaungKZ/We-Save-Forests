@@ -271,6 +271,8 @@ footer {
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
+  box-shadow: $navigators-box-shadow;
+  transform: translateY(-3px);
 
   a {
     img {
@@ -280,8 +282,8 @@ footer {
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: $navigators-box-shadow;
+    transform: translateY(-6px);
+    // box-shadow: none;
   }
 }
 

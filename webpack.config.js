@@ -1,14 +1,15 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const terserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/js/index.js",
-  //   output: {
-  //     filename: "main.js",
-  //     path: path.resolve(__dirname, "dist"),
-  //   },
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
   module: {
     rules: [
       {
@@ -44,10 +45,26 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
       favicon: "./src/images/logo.png",
+      minify: {
+        removeComments: true,
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new terserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
+  },
 };

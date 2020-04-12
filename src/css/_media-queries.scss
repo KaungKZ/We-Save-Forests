@@ -413,6 +413,19 @@
       font-size: 12px;
     }
   }
+  .up-to-top {
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
 }
 
 @media (max-width: 750px) {
@@ -537,6 +550,10 @@
 
   .mfp-header-active {
     height: 80vh !important;
+
+    .menu .logo svg path {
+      fill: #fff;
+    }
   }
   header {
     .menu {
@@ -571,18 +588,32 @@
           &::after {
             content: "";
             position: absolute;
+            // left: -10% !important;
+            // top: 20% !important;
+            // width: 5px !important;
+            // height: 60% !important;
+            border-radius: 10px;
+            background: #fff !important;
+
             top: 100% !important;
             left: -10% !important;
             width: 120% !important;
             height: 2px;
-            border-radius: 10px;
-            background: #fff !important;
           }
         }
 
-        // .active {
-        //   background: rgba(255, 255, 255, 0.4);
-        // }
+        .active::after {
+          // content: "";
+          // position: absolute;
+          // left: -10% !important;
+          // top: 20% !important;
+          // width: 5px !important;
+          // height: 60% !important;
+
+          // border-radius: 10px;
+          // background: #fff !important;
+          // background: rgba(255, 255, 255, 0.4);
+        }
       }
 
       .mfp-list-active {
@@ -878,23 +909,28 @@
       height: 35px;
     }
   }
-  header .header-content {
-    .text {
-      .main-title {
-        font-size: 3.5rem;
-      }
-      p {
-        line-height: 40px;
-      }
+  header {
+    .menu .list a {
+      font-size: 1.35rem;
     }
-    .header-banner {
-      // left: 65%;
-      img {
-        width: 430px;
+    .header-content {
+      .text {
+        .main-title {
+          font-size: 3.5rem;
+        }
+        p {
+          line-height: 40px;
+        }
       }
-    }
-    .contact .container .banner img {
-      width: 400px;
+      .header-banner {
+        // left: 65%;
+        img {
+          width: 430px;
+        }
+      }
+      .contact .container .banner img {
+        width: 400px;
+      }
     }
   }
 
@@ -912,6 +948,10 @@
 @media (max-width: 500px) {
   .step-2 .shapes {
     left: -17% !important;
+  }
+  .up-to-top {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -1146,6 +1186,9 @@
 }
 
 @media (max-width: 400px) {
+  header .menu .list a {
+    font-size: 1.2rem;
+  }
   .step-1 .container .box .content .text {
     font-size: 14px !important;
   }
@@ -1154,6 +1197,16 @@
   }
   .step-3 .container .box .content .text p {
     font-size: 14px !important;
+  }
+
+  .up-to-top {
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 
