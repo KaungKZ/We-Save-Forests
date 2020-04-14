@@ -4,17 +4,31 @@
   box-sizing: border-box;
 }
 
-// html {
-//   scroll-behavior: smooth;
-// }
-
 body {
   background: #fdfdfd;
+  position: fixed;
+
+  header,
+  #step,
+  .contact,
+  footer {
+    display: none;
+  }
+}
+
+body.loaded {
+  position: static;
+
+  header,
+  #step,
+  .contact,
+  footer {
+    display: block;
+  }
 }
 
 ::-webkit-scrollbar {
   width: 7px;
-  // background: #fdfdfd;
 }
 
 ::-webkit-scrollbar-track {
@@ -283,6 +297,11 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     transition: background 700ms;
+
+    // a {
+    //   text-decoration: none;
+    //   color: #fff;
+    // }
 
     &:hover {
       background: $secondary-color;

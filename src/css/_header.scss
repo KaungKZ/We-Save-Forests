@@ -151,21 +151,21 @@ header {
           background: $primary-color;
           color: #fff;
           margin-right: 30px;
-
           transition: background 700ms;
 
           &:hover {
             background: $secondary-color;
           }
         }
-        .donate-btn {
+        .donate-href {
           background: rgba(60, 97, 65, 0.15);
           // border: 2px solid $text-color;
           border: none;
-          color: $text-color;
           opacity: 0.8;
           // padding: 17px 40px;
           transition: background 500ms;
+          cursor: pointer;
+          color: $text-color;
 
           &:hover {
             background: rgba(60, 97, 65, 0.25);

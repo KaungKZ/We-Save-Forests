@@ -12,6 +12,9 @@ const slide_links = selectAll(".slide-link");
 
 const learn_more_btn = selectOne(".learn_more-btn");
 
+// const svgElement = selectOne(".shapeshifter");
+const loading_screen = selectOne(".loading-screen");
+
 // const contact_section = selectOne('.contact');
 // const step_1 = selectOne(".step-1");
 // const step_2 = selectOne(".step-2");
@@ -60,19 +63,22 @@ function removeMobileActive() {
 }
 
 function handleNavLink() {
+  if (this.nextElementSibling.className.includes("yes")) {
+    console.log("true");
+  }
   const linkText = this.innerHTML.toLowerCase();
   if (linkText === "home") return;
 
   if (linkText === "explore") {
-    smoothLinks(".step-1", 1500);
+    smoothLinks(".learn_more-btn", 1500);
     removeMobileActive();
     //document.body.style.position = "static";
   } else if (linkText === "contact") {
-    smoothLinks(".contact", 1000);
+    smoothLinks(".contact", 1500);
     removeMobileActive();
     //document.body.style.position = "static";
   } else {
-    smoothLinks(".step-3", 1000);
+    smoothLinks(".step-3", 1500);
     removeMobileActive();
   }
 }
@@ -130,3 +136,55 @@ slide_links.forEach((link) => link.addEventListener("click", handleSlideLink));
 // const yearValues = test.map((one) => Object.values(one.plan));
 
 // console.log(...yearValues);
+
+// window.addEventListener("load", () => {
+//   loading_screen.classList.add("active");
+//   document.body.style.position = "fixed";
+
+//   setTimeout(() => {
+//     loading_screen.classList.remove("active");
+//     document.body.style.position = "static";
+//   }, 3200);
+//   // svgElement.classList.add("play");
+// });
+
+// (function()
+// {
+//   if( window.localStorage)
+//   {
+//     if( !localStorage.getItem('firstLoad') )
+//     {
+//       localStorage['firstLoad'] = true;
+//       window.location.reload();
+//     }
+//     else
+//       localStorage.removeItem('firstLoad');
+//   }
+// })();
+// const NAME = "once";
+// const homeURL = "http://localhost:8080/";
+// let currentURL;
+window.onload = () => {
+  // currentURL = document.URL;
+  // console.log(currentURL);
+  // console.log(document.URL);
+  // if (currentURL == homeURL) {
+  //   setTimeout(() => {
+  //     loading_screen.classList.add("loading_done");
+  //     document.body.classList.add("loaded");
+  //   }, 3300);
+  // } else {
+  //   loading_screen.classList.add("loading_done");
+  //   document.body.classList.add("loaded");
+  // }
+  if (!window.sessionStorage.getItem("name")) {
+    window.sessionStorage.setItem("name", "firstTime");
+    setTimeout(() => {
+      loading_screen.classList.add("loading_done");
+      document.body.classList.add("loaded");
+    }, 3300);
+  } else {
+    loading_screen.classList.add("loading_done");
+    document.body.classList.add("loaded");
+  }
+};

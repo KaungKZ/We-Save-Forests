@@ -2,12 +2,16 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const terserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/js/index.js",
+  entry: {
+    main: "./src/js/index.js",
+    donate: "./src/js/donate.js",
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -41,9 +45,20 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
+      title: "main",
       template: "./src/index.html",
       filename: "./index.html",
+      favicon: "./src/images/logo.png",
+      minify: {
+        removeComments: true,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      title: "donate",
+      template: "./src/donate.html",
+      filename: "./donate.html",
       favicon: "./src/images/logo.png",
       minify: {
         removeComments: true,
