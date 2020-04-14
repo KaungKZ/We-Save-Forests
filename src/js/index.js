@@ -63,9 +63,6 @@ function removeMobileActive() {
 }
 
 function handleNavLink() {
-  if (this.nextElementSibling.className.includes("yes")) {
-    console.log("true");
-  }
   const linkText = this.innerHTML.toLowerCase();
   if (linkText === "home") return;
 
@@ -77,9 +74,6 @@ function handleNavLink() {
     smoothLinks(".contact", 1500);
     removeMobileActive();
     //document.body.style.position = "static";
-  } else {
-    smoothLinks(".step-3", 1500);
-    removeMobileActive();
   }
 }
 
