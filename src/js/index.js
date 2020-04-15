@@ -171,7 +171,7 @@ window.onload = () => {
     setTimeout(() => {
       loading_screen.classList.add("loading_done");
       home_page_body.classList.add("loaded");
-    }, 3300);
+    }, 3000);
   } else {
     loading_screen.classList.add("loading_done");
     home_page_body.classList.add("loaded");
