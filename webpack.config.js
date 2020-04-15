@@ -61,6 +61,7 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
       favicon: "./src/images/logo.png",
+      excludeChunks: ["donate"],
       minify: {
         removeComments: true,
       },
@@ -70,6 +71,7 @@ module.exports = {
       template: "./src/donate.html",
       filename: "./donate.html",
       favicon: "./src/images/logo.png",
+      excludeChunks: ["main"],
       minify: {
         removeComments: true,
       },
