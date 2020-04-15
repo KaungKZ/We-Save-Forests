@@ -87,14 +87,11 @@
 
       .newsletter-and-info {
         display: flex;
-        // flex: 1;
         justify-content: space-between;
         align-items: center;
         height: 300px;
         width: 700px;
         border-radius: 10px;
-
-        // border: 1px solid rgba(53, 53, 53, 0.6);
 
         .newsletter {
           background: #f7f7f7;
@@ -283,7 +280,6 @@ footer {
 
   &:hover {
     transform: translateY(-6px);
-    // box-shadow: none;
   }
 }
 
@@ -301,8 +297,7 @@ footer {
 }
 
 .loading-screen {
-  // display: block;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -312,7 +307,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  // display: none;
+
   .shapeshifter {
     background-image: url(../images/sprite_60fps.svg);
     background-repeat: no-repeat;

@@ -7,8 +7,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    main: "./src/js/index.js",
-    donate: "./src/js/donate.js",
+    main: ["./src/js/index.js", "./src/css/style.scss"],
+    donate: ["./src/js/donate.js", "./src/css/donate.scss"],
   },
   output: {
     filename: "[name].bundle.js",
@@ -40,7 +40,17 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
+          },
+        ],
       },
     ],
   },
@@ -81,5 +91,12 @@ module.exports = {
         extractComments: false,
       }),
     ],
+  },
+  devServer: {
+    staticOptions: {
+      headers: {
+        "Cache-Control": "max-age=2628000",
+      },
+    },
   },
 };

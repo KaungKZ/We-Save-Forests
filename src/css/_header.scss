@@ -3,10 +3,6 @@ header {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  // background-image: url(../images/home-bg-shape.svg);
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: bottom;
 
   .menu {
     width: 85%;
@@ -26,7 +22,6 @@ header {
 
       a {
         text-decoration: none;
-        // color: $secondary-text-color;
         font-size: 1rem;
         font-weight: 700;
         color: #fff;
@@ -74,8 +69,6 @@ header {
         text-indent: -9999px;
         border-radius: 9px;
         line-height: 0;
-        // transition: opacity 300ms, transform 400ms;
-        // transition-delay: background 1s ease-out;
         transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
       }
 
@@ -95,7 +88,6 @@ header {
       }
     }
     .mobile-nav-bg {
-      // display: none;
       opacity: 0;
       pointer-events: none;
       position: absolute;
@@ -138,7 +130,6 @@ header {
           font-family: $button-font;
           font-weight: 700;
           font-size: 16px;
-          // padding: 20px;
           letter-spacing: 1px;
           border-radius: 50px;
           padding: 17px 40px;
@@ -159,10 +150,8 @@ header {
         }
         .donate-href {
           background: rgba(60, 97, 65, 0.15);
-          // border: 2px solid $text-color;
           border: none;
           opacity: 0.8;
-          // padding: 17px 40px;
           transition: background 500ms;
           cursor: pointer;
           color: $text-color;
@@ -174,38 +163,21 @@ header {
       }
     }
     .header-banner {
-      // max-width: 50%;
       margin-top: -10px;
       height: fit-content;
 
       img {
-        // height: 530px;
         height: auto;
       }
     }
   }
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 35%;
-  //   // transform: translateX(35%);
-  //   width: 100%;
-  //   height: 100%;
-  //   background-image: url(../images/home-bg-shape.png);
-  //   background-size: cover;
-  //   background-repeat: no-repeat;
-  //   z-index: -1;
-  // }
+
   .home-bg-shape {
     position: absolute;
     top: 0;
     right: 0;
     text-align: right;
-    // width: 100%;
-    //height: 100%;
     z-index: -1;
-    //transform: translateX(-20px);
 
     img {
       height: 100vh;

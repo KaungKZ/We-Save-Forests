@@ -1,24 +1,19 @@
 import "../css/style.scss";
-// import "../images/logo.svg";
 
 const nav_btn = selectOne(".menu-for-phone");
 const header_menu = selectOne("header .menu");
 const header = selectOne("header");
 const mobile_list = selectOne("header .menu .list");
 const upToTop_btn = selectOne(".up-to-top");
+const home_page_body = selectOne(".home-page");
 
 const nav_links = selectAll(".list a");
 const slide_links = selectAll(".slide-link");
 
 const learn_more_btn = selectOne(".learn_more-btn");
 
-// const svgElement = selectOne(".shapeshifter");
 const loading_screen = selectOne(".loading-screen");
 
-// const contact_section = selectOne('.contact');
-// const step_1 = selectOne(".step-1");
-// const step_2 = selectOne(".step-2");
-// const step_3 = selectOne(".step-3");
 function selectOne(selector) {
   return document.querySelector(`${selector}`);
 }
@@ -35,9 +30,9 @@ function handleMobileNavBar() {
   header.classList.toggle("mfp-header-active");
   mobile_list.classList.toggle("mfp-list-active");
   if (mobile_list.className.includes("mfp-list-active")) {
-    document.body.style.position = "fixed";
+    home_page_body.style.position = "fixed";
   } else {
-    document.body.style.position = "static";
+    home_page_body.style.position = "static";
   }
 }
 
@@ -59,7 +54,7 @@ function removeMobileActive() {
   header_menu.classList.remove("mfp-header_menu-active");
   header.classList.remove("mfp-header-active");
   mobile_list.classList.remove("mfp-list-active");
-  document.body.style.position = "static";
+  home_page_body.style.position = "static";
 }
 
 function handleNavLink() {
@@ -175,10 +170,12 @@ window.onload = () => {
     window.sessionStorage.setItem("name", "firstTime");
     setTimeout(() => {
       loading_screen.classList.add("loading_done");
-      document.body.classList.add("loaded");
+      home_page_body.classList.add("loaded");
     }, 3300);
   } else {
     loading_screen.classList.add("loading_done");
-    document.body.classList.add("loaded");
+    home_page_body.classList.add("loaded");
   }
 };
+
+// let's say your `lastIndex` is 10. Because of `i <= 10 (lastIndex)` and when `i` reaches 10, you are setting `numberMatches.questions[i + 1]` which `numberMatches.questions[11]` doesn't exist.

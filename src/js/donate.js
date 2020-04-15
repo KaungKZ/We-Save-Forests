@@ -1,1 +1,1 @@
-console.log("hello from donate");
+import "../css/donate.scss";
