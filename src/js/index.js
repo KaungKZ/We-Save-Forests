@@ -166,16 +166,18 @@ window.onload = () => {
   //   loading_screen.classList.add("loading_done");
   //   document.body.classList.add("loaded");
   // }
-  if (!window.sessionStorage.getItem("name")) {
-    window.sessionStorage.setItem("name", "firstTime");
-    setTimeout(() => {
-      loading_screen.classList.add("loading_done");
-      home_page_body.classList.add("loaded");
-    }, 3000);
-  } else {
+  // if (!window.sessionStorage.getItem("name")) {
+  //   window.sessionStorage.setItem("name", "firstTime");
+
+  // } else {
+  //   loading_screen.classList.add("loading_done");
+  //   home_page_body.classList.add("loaded");
+  // }
+
+  setTimeout(() => {
     loading_screen.classList.add("loading_done");
     home_page_body.classList.add("loaded");
-  }
+  }, 2300);
 };
 
 // let's say your `lastIndex` is 10. Because of `i <= 10 (lastIndex)` and when `i` reaches 10, you are setting `numberMatches.questions[i + 1]` which `numberMatches.questions[11]` doesn't exist.
