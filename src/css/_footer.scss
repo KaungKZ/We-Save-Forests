@@ -297,13 +297,13 @@ footer {
 }
 
 .loading-screen {
-  width: 100vw;
+  width: calc(100vw - 7px);
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   background: #fdfdfd;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -317,14 +317,6 @@ footer {
     height: 180px;
     background-repeat: no-repeat;
     animation-name: play180;
-  }
-}
-
-.loading-screen.loading_done {
-  display: none;
-
-  .shapeshifter {
-    animation: none;
   }
 }
 

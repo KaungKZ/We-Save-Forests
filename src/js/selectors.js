@@ -6,6 +6,12 @@ export const header = selectOne("header");
 export const mobile_list = selectOne("header .menu .list");
 export const upToTop_btn = selectOne(".up-to-top");
 export const home_page_body = selectOne(".home-page");
+export const titles = selectAll(".h-title");
+
+export const navigators = selectAll(".navigator");
+
+export const steps = selectAll("#step");
+export const contact_section = selectOne(".contact");
 
 export const nav_links = selectAll(".list a");
 export const slide_links = selectAll(".slide-link");

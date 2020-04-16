@@ -709,7 +709,7 @@
       .header-banner {
         top: -6%;
         left: 110% !important;
-        transform: translateX(-50%);
+        transform: translateX(-50%) !important;
         img {
           width: 480px;
         }
@@ -1172,7 +1172,7 @@
     }
   }
   .step-2 {
-    height: 600px !important;
+    height: 620px !important;
 
     .container .box {
       .navigator {
@@ -1249,6 +1249,7 @@
   }
   .step-2 .container .box .content .text p {
     font-size: 12px;
+    width: 80%;
   }
   .step-3 .container .box .content .text p {
     font-size: 14px !important;
@@ -1309,7 +1310,7 @@
     height: 550px !important;
   }
   .step-2 {
-    height: 590px !important;
+    height: 600px !important;
   }
   .step-3 {
     height: 600px !important;

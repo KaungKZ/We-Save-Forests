@@ -11,7 +11,7 @@ import {
 import { smoothLinks } from "./smoothLinks";
 import { upToTop } from "./up-to-top";
 import { handleNavLink, handleSlideLink, handleMobileNavBar } from "./navLinks";
-import { initFunc } from "./loadingScreen";
+import { initFunc } from "./gsapAnimations";
 
 window.onload = initFunc;
 window.addEventListener("scroll", upToTop);
