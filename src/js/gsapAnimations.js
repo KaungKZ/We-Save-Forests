@@ -10,6 +10,7 @@ const tl = gsap.timeline();
 const header_afters = CSSRulePlugin.getRule(
   "header .header-content .text .main-title span::after"
 );
+document.quer;
 
 function loading_animation() {
   const anim = tl

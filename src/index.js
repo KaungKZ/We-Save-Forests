@@ -1,4 +1,4 @@
-import "../css/style.scss";
+import "./css/style.scss";
 
 import {
   nav_btn,
@@ -6,12 +6,18 @@ import {
   nav_links,
   learn_more_btn,
   slide_links,
-} from "./selectors";
+  navArrows,
+} from "./js/selectors";
 
-import { smoothLinks } from "./smoothLinks";
-import { upToTop } from "./up-to-top";
-import { handleNavLink, handleSlideLink, handleMobileNavBar } from "./navLinks";
-import { initFunc } from "./gsapAnimations";
+import { smoothLinks } from "./js/smoothLinks";
+import { upToTop } from "./js/up-to-top";
+import {
+  handleNavLink,
+  handleSlideLink,
+  handleMobileNavBar,
+  handleNavArrows,
+} from "./js/navLinks";
+import { initFunc } from "./js/gsapAnimations";
 
 window.onload = initFunc;
 window.addEventListener("scroll", upToTop);
@@ -20,3 +26,4 @@ upToTop_btn.addEventListener("click", () => smoothLinks(".menu", 1500));
 nav_links.forEach((link) => link.addEventListener("click", handleNavLink));
 learn_more_btn.addEventListener("click", () => smoothLinks(".step-1", 1000));
 slide_links.forEach((link) => link.addEventListener("click", handleSlideLink));
+navArrows.forEach((arrow) => arrow.addEventListener("click", handleNavArrows));

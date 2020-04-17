@@ -42,6 +42,16 @@ export function handleMobileNavBar() {
   }
 }
 
+export function handleNavArrows() {
+  const navClass = this.className;
+
+  navClass.includes("step-1")
+    ? smoothLinks(".step-2", 1500)
+    : navClass.includes("step-2")
+    ? smoothLinks(".step-3", 1500)
+    : smoothLinks(".contact", 1500);
+}
+
 function removeMobileActive() {
   nav_btn.classList.remove("mfp-active");
   header_menu.classList.remove("mfp-header_menu-active");

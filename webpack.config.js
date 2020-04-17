@@ -7,8 +7,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    main: ["./src/js/index.js", "./src/css/style.scss"],
-    donate: ["./src/js/donate.js", "./src/css/donate.scss"],
+    main: ["./src/index.js", "./src/css/style.scss"],
+    donate: ["./src/donate.js", "./src/css/donate.scss"],
   },
   output: {
     filename: "[name].bundle.js",
@@ -16,6 +16,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
       {
         test: /\.html$/,
         use: [

@@ -21,7 +21,7 @@
       align-items: center;
 
       .message {
-        background: #f7f7f7;
+        background: #efefef;
         width: 350px;
         height: 300px;
         padding: 20px 30px;
@@ -211,24 +211,18 @@ footer {
   background: $text-color;
 
   .container {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row-reverse;
     font-family: $primary-font;
 
     .left-content {
       display: flex;
       align-items: center;
-
-      .copy-right {
-        color: #fff;
-        font-size: 1rem;
-        opacity: 0.8;
-        margin-right: 5rem;
-      }
 
       .social-media-icons {
         display: flex;
@@ -257,6 +251,7 @@ footer {
   position: fixed;
   top: 90%;
   right: 5%;
+  // transform: translate(5%, -90%);
   width: 45px;
   height: 45px;
   background: $primary-color;

@@ -210,11 +210,6 @@
   }
   footer {
     .container {
-      .left-content {
-        .copy-right {
-          font-size: 14px;
-        }
-      }
       .right-content {
         span {
           font-size: 14px;
@@ -415,9 +410,6 @@
         width: 15px;
         height: 15px;
       }
-      .copy-right {
-        font-size: 12px;
-      }
     }
     .right-content span {
       font-size: 12px;
@@ -499,11 +491,13 @@
               height: 40px;
               font-size: 14px;
               font-weight: 700;
+              box-shadow: $navigators-box-shadow-mobile;
             }
 
             .icon {
               width: 50px;
               height: 40px;
+              box-shadow: $navigators-box-shadow-mobile;
 
               img {
                 width: 25px;
@@ -514,14 +508,12 @@
             .arrows {
               transform: rotate(-90deg);
               margin-top: 3px;
+              animation: none;
+              pointer-events: none;
 
               img {
                 width: 15px;
                 height: 15px;
-              }
-
-              &:hover {
-                animation: none;
               }
             }
           }
@@ -567,6 +559,7 @@
     .menu {
       .list {
         transform: translateX(110%);
+        clip-path: circle(10% at 100% 0%);
         opacity: 0;
         z-index: -1;
         position: absolute;
@@ -574,10 +567,10 @@
         width: 100%;
         height: 100vh;
         flex-direction: column;
-        background: #fdfdfd;
+        background: #f8f8f8;
         z-index: 1;
         padding-top: 140px;
-        transition: transform 0s ease-in, opacity 0s ease-in;
+        transition: clip-path 600ms ease-in-out;
 
         a {
           display: flex;
@@ -610,17 +603,13 @@
 
         .active {
           opacity: 1;
-
-          &::after {
-            opacity: 0.7;
-          }
         }
       }
 
       .mfp-list-active {
         transform: translateX(0%);
+        clip-path: circle(75%);
         opacity: 1;
-        transition: transform 400ms ease-out, opacity 500ms ease-out;
       }
 
       .menu-for-phone {
@@ -702,6 +691,7 @@
 
         .buttons {
           width: 90% !important;
+          margin: 0 auto;
           display: flex;
           justify-content: space-around;
         }
@@ -797,7 +787,7 @@
           }
 
           & > * {
-            width: 80% !important;
+            width: 65% !important;
             margin: 0 auto;
           }
         }
@@ -849,6 +839,7 @@
               margin-bottom: 10px;
             }
             .info-list {
+              margin-bottom: 10px;
               span {
                 font-size: 14px;
               }
@@ -865,8 +856,22 @@
       justify-content: center;
       align-items: flex-start;
 
-      .left-content .copy-right {
-        margin-right: 6rem;
+      .left-content {
+        margin-bottom: 2.5px;
+        .social-media-icons {
+          a {
+            width: 15px;
+            height: 15px;
+
+            img {
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+      .right-content {
+        margin-top: 2.5px;
       }
     }
   }
@@ -907,8 +912,7 @@
     }
     .step-btn {
       font-size: 10px;
-      width: 130px;
-      height: 35px;
+      padding: 12px 40px;
     }
   }
   header {
@@ -944,9 +948,6 @@
   .step-3 {
     height: 780px !important;
 
-    .container .box .content .text .step-3-btn {
-      padding: 12px 40px;
-    }
     .shapes {
       left: -17% !important;
     }
@@ -954,6 +955,12 @@
 
   .contact .container .banner img {
     width: 400px;
+  }
+}
+
+@media (max-width: 536px) {
+  .step-3 {
+    height: 820px !important;
   }
 }
 
@@ -1028,7 +1035,6 @@
     width: 350px;
   }
   footer.content {
-    .left-content .copy-right,
     .right-content span {
       font-size: 10px;
     }
@@ -1076,6 +1082,9 @@
               width: 30px;
               height: 30px;
             }
+            .line {
+              height: 1px;
+            }
             .icon {
               width: 40px;
               height: 30px;
@@ -1095,6 +1104,10 @@
           }
           .slides {
             width: 70%;
+
+            .line {
+              height: 1px;
+            }
             span {
               width: 25px;
               height: 25px;
@@ -1108,9 +1121,8 @@
       }
     }
     .step-btn {
-      height: 30px;
-      width: 120px;
-      font-size: 8px;
+      padding: 10px 25px;
+      font-size: 10px;
     }
   }
   header {
@@ -1143,6 +1155,7 @@
           line-height: 30px;
         }
         .buttons {
+          width: 100%;
           margin: 0 auto;
           padding-top: 0;
           .learn_more-btn {
@@ -1200,9 +1213,6 @@
         p {
           font-size: 1rem !important;
         }
-        .step-3-btn {
-          padding: 10px 40px;
-        }
       }
     }
   }
@@ -1218,6 +1228,11 @@
       }
       .bottom-content .message {
         height: 350px;
+
+        & > * {
+          width: 75% !important;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -1229,6 +1244,14 @@
   :root {
     .title {
       font-size: 1.3rem;
+    }
+  }
+  footer .container .left-content {
+    .social-media-icons {
+      a {
+        width: 15px;
+        height: 15px;
+      }
     }
   }
 }
