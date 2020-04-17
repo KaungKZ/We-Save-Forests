@@ -52,6 +52,10 @@ export function handleNavArrows() {
     : smoothLinks(".contact", 1500);
 }
 
+export function handleStep1_btn() {
+  return smoothLinks(".step-3", 1500);
+}
+
 function removeMobileActive() {
   nav_btn.classList.remove("mfp-active");
   header_menu.classList.remove("mfp-header_menu-active");

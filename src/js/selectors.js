@@ -10,7 +10,8 @@ export const titles = selectAll(".h-title");
 
 export const navigators = selectAll(".navigator");
 export const navArrows = selectAll(".navigator .arrows");
-const step_bg_shapes = selectAll("#step");
+
+export const step_2_btn = selectOne(".step-2 .step-2-btn");
 
 export const steps = selectAll("#step");
 export const contact_section = selectOne(".contact");

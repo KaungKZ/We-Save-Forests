@@ -553,7 +553,7 @@
   }
 
   .mfp-header-active {
-    height: 100vh !important;
+    overflow: unset;
   }
   header {
     .menu {

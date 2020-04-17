@@ -7,6 +7,7 @@ import {
   learn_more_btn,
   slide_links,
   navArrows,
+  step_2_btn,
 } from "./js/selectors";
 
 import { smoothLinks } from "./js/smoothLinks";
@@ -16,6 +17,7 @@ import {
   handleSlideLink,
   handleMobileNavBar,
   handleNavArrows,
+  handleStep1_btn,
 } from "./js/navLinks";
 import { initFunc } from "./js/gsapAnimations";
 
@@ -27,3 +29,4 @@ nav_links.forEach((link) => link.addEventListener("click", handleNavLink));
 learn_more_btn.addEventListener("click", () => smoothLinks(".step-1", 1000));
 slide_links.forEach((link) => link.addEventListener("click", handleSlideLink));
 navArrows.forEach((arrow) => arrow.addEventListener("click", handleNavArrows));
+step_2_btn.addEventListener("click", handleStep1_btn);
