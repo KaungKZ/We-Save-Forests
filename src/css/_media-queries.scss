@@ -520,6 +520,13 @@
           .content {
             margin: 0 0 70px 0;
 
+            .text p::after {
+              top: -15px;
+              left: 15%;
+              width: 70% !important;
+              height: 2px;
+            }
+
             .image {
               margin-bottom: 40px;
               img {
@@ -1066,8 +1073,7 @@
           .content {
             margin: 0 0 35px 0;
             .text p::after {
-              top: -15px;
-              left: 0;
+              left: 0%;
               width: 100% !important;
               height: 1px;
             }

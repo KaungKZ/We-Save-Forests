@@ -20,5 +20,9 @@
     top: 0 !important;
     transform: scale(0.8);
     left: -3% !important;
+
+    img {
+      transform-origin: left top;
+    }
   }
 }

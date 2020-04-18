@@ -257,11 +257,14 @@
     top: 30%;
     left: -5%;
     z-index: -1;
+
+    img {
+      opacity: 0;
+      transform-origin: 50% 50%;
+    }
   }
   .step-btn {
     font-family: $button-font;
-    // width: 180px;
-    // height: 40px;
     padding: 12px 55px;
     text-decoration: none;
     background: $primary-color;

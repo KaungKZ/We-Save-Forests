@@ -7,6 +7,10 @@ gsap.registerPlugin(CSSRulePlugin);
 
 const tl = gsap.timeline();
 
+const tl_shapes = gsap.timeline({
+  defaults: { opacity: 1 },
+});
+
 const header_afters = CSSRulePlugin.getRule(
   "header .header-content .text .main-title span::after"
 );
@@ -40,26 +44,68 @@ function header_animation() {
   return anim;
 }
 
+let shapes_animation_duration = 0.7;
+const toVals = { duration: shapes_animation_duration };
+
+function step_shapes_animation(step) {
+  if (step.includes("step-1")) {
+    return tl_shapes.fromTo(
+      ".step-1 .shapes img",
+      { scale: 0 },
+      { scale: 1, ...toVals }
+    );
+  } else if (step.includes("step-2")) {
+    return tl_shapes
+      .fromTo(
+        ".step-2 .shapes img:first-child",
+        { x: -200 },
+        { x: 0, ...toVals }
+      )
+      .fromTo(
+        ".step-2 .shapes img:last-child",
+        { y: -100, opacity: 0 },
+        { y: 0, duration: shapes_animation_duration + 0.5 },
+        "-=0.4"
+      );
+  } else {
+    return tl_shapes.fromTo(
+      ".step-3 .shapes img",
+      { scale: 0 },
+      { scale: 1, ...toVals }
+    );
+  }
+}
+
 const options = {
   rootMargin: "100px 0px 0px 0px",
 };
 
+const options_for_shapes = {
+  rootMargin: "0px 0px 0px 0px",
+  threshold: 0.4,
+};
+
 const header_observer = new IntersectionObserver(span_after_ob_func, options);
+const shapes_observer = new IntersectionObserver(
+  shapes_ob_func,
+  options_for_shapes
+);
 
 export function initFunc() {
   if (!window.sessionStorage.getItem("name")) {
     window.sessionStorage.setItem("name", "firstTime");
     tl.add(loading_animation());
-    page_animation(header_observer);
+    page_animation();
   } else {
-    page_animation(header_observer);
+    page_animation();
   }
 }
 
-function page_animation(header_observer) {
+function page_animation() {
   document.body.classList.add("loaded");
   tl.add(header_animation());
   steps.forEach((step) => header_observer.observe(step));
+  steps.forEach((step) => shapes_observer.observe(step));
   header_observer.observe(contact_section);
 }
 
@@ -76,6 +122,17 @@ function span_after_ob_func(entries, observer) {
       } else {
         helperTitle(titles[3], observer, entry.target);
       }
+    }
+  });
+}
+
+function shapes_ob_func(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      if (window.matchMedia("(max-width: 450px)").matches) return;
+      const entryClass = entry.target.classList.value;
+      step_shapes_animation(entryClass);
+      observer.unobserve(entry.target);
     }
   });
 }
